@@ -1,24 +1,30 @@
 function displayMailingLabel(name, address, city, state, zip) {
-  console.log("\n" + name);
+  console.log(name);
   console.log(address);
   console.log(`${city}, ${state}, ${zip}`);
+  console.log("-".repeat(20));
 }
 
 function addNumbers(num1, num2) {
   const sum = num1 + num2;
-  console.log(`\n ${num1} + ${num2} = ${sum}`);
+  console.log(`${num1} + ${num2} = ${sum}`);
+  console.log("-".repeat(20));
 }
 
 function displayReceipt(totalDue, amountPaid) {
+  //calculations and var declarations
   const change = totalDue - amountPaid;
-  console.log(`\n Total Due: $${totalDue} `);
+  const need = Math.abs(change);
+
+  //output
+  console.log(`Total Due: $${totalDue} `);
   console.log(`Amount Paid: $${amountPaid} \n`);
   if (totalDue < amountPaid) {
-    need = Math.abs(change);
     console.log(`I need $${need} more`);
   } else {
     console.log(`Change Due: $${change}`);
   }
+  console.log("-".repeat(20));
 }
 
 displayMailingLabel("ben", "123 main st", "city", "Chicago", "12345");
