@@ -1,12 +1,12 @@
 function parseAndDisplayName(userName) {
   const trimmedUserName = userName.trim();
-  let firstName, middleName, lastName;
+  let firstName, middleName, lastName, firstSpacePosition, lastSpacePosition;
   if (trimmedUserName.indexOf(" ") == -1) {
     firstName = trimmedUserName;
     middleName = "N/A";
     lastName = "N/A";
   } else if (trimmedUserName.indexOf(" ") == trimmedUserName.lastIndexOf(" ")) {
-    const firstSpacePosition = userName.indexOf(" ");
+    firstSpacePosition = userName.indexOf(" ");
     firstName = trimmedUserName.slice(0, firstSpacePosition);
     middleName = "N/A";
     lastName = trimmedUserName.slice(
@@ -14,8 +14,8 @@ function parseAndDisplayName(userName) {
       trimmedUserName.length
     );
   } else {
-    const firstSpacePosition = trimmedUserName.indexOf(" ");
-    const lastSpacePosition = trimmedUserName.lastIndexOf(" ");
+    firstSpacePosition = trimmedUserName.indexOf(" ");
+    lastSpacePosition = trimmedUserName.lastIndexOf(" ");
     firstName = trimmedUserName.slice(0, firstSpacePosition);
     middleName = trimmedUserName.slice(
       firstSpacePosition + 1,
@@ -29,9 +29,10 @@ function parseAndDisplayName(userName) {
   console.log("Name:", userName);
   console.log("First name:", firstName);
   console.log("Middle name:", middleName);
-  console.log("Last name:", lastName, "\n");
+  console.log("Last name:", lastName);
+  console.log("-".repeat(20));
 }
 
-parseAndDisplayName("Cher");
-parseAndDisplayName("Brenda Kaye");
+parseAndDisplayName("Cher".trim());
+parseAndDisplayName("Brenda Kaye".trim());
 parseAndDisplayName("Dana Lynn Wyatt");
