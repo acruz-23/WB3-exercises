@@ -1,5 +1,5 @@
 function getSocSecTax(grossPay) {
-  ssTaxRate = 6.2 / 100;
+  const ssTaxRate = 6.2 / 100;
   const taxedAmt = grossPay * ssTaxRate;
 
   return taxedAmt.toFixed(2);
@@ -10,6 +10,12 @@ function getMedicareTax(grossPay) {
   const taxedAmt = grossPay * medicareTaxRate;
 
   return taxedAmt.toFixed(2);
+}
+
+function getTaxedAmt(grossPay, taxRate) {
+  const taxedAmt = grossPay * taxRate;
+
+  return taxedAmt;
 }
 
 function getFederalTax(grossPay, withholdingCode) {
@@ -33,3 +39,13 @@ console.log("Medicare tax: " + getMedicareTax(750));
 console.log("Federal tax: " + getFederalTax(750, 0));
 console.log("Federal tax: " + getFederalTax(1550, 2));
 console.log("Federal tax: " + getFederalTax(1100, 6));
+
+const value = 5;
+function test(num) {
+  // let value = 10;
+  sum = value + num;
+  console.log("value in funciton =", value);
+  return sum;
+}
+console.log("value out of funciton =", value);
+console.log(test(5));
