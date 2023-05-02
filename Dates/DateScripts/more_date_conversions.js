@@ -6,7 +6,7 @@ console.log(bDay.toLocaleString());
 // console.log(momBDay);
 function printBDay(date, type) {
   //   const basicDate = date.toLocaleString();
-  let month = date.getMonth();
+  let month = +date.getMonth() + 1;
   let day = date.getDate();
   const year = date.getFullYear();
 
@@ -17,7 +17,7 @@ function printBDay(date, type) {
     if (+day < 10) {
       day = "0" + day;
     }
-    console.log(`${+month + 1}/${day}/${year}`);
+    console.log(`${month}/${day}/${year}`);
   } else if (type.toLowerCase() == "space") {
     if (+month < 10) {
       month = "0" + month;
@@ -26,9 +26,9 @@ function printBDay(date, type) {
       day = "0" + day;
     }
     month = "0" + month;
-    console.log(+month + 1, day, year);
+    console.log(month, day, year);
   } else if (type.toLowerCase() == "comma")
-    console.log(`${year}, ${+month + 1}, ${day}`);
+    console.log(`${year}, ${month}, ${day}`);
 }
 printBDay(bDay, "slash");
 printBDay(momBDay, "space");
